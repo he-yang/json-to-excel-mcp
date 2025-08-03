@@ -30,16 +30,9 @@ Server Config JSON:
 ```json
 {
   "mcpServers": {
-    "json2excel": {
-      "args": [
-        "mcp-remote",
-        "https://mcp2.wtsolutions.cn/sse"
-      ],
-      "command": "npx",
-      "tools": [
-        "json_to_excel_mcp_from_data",
-        "json_to_excel_mcp_from_url"
-      ]
+    "json2excelsse": {
+      "type": "sse",
+      "url": "https://mcp2.wtsolutions.cn/sse"
     }
   }
 }
@@ -56,16 +49,9 @@ Server Config JSON:
 ```json
 {
   "mcpServers": {
-    "json2excel": {
-      "args": [
-        "mcp-remote",
-        "https://mcp2.wtsolutions.cn/mcp"
-      ],
-      "command": "npx",
-      "tools": [
-        "json_to_excel_mcp_from_data",
-        "json_to_excel_mcp_from_url"
-      ]
+    "json2excelmcp": {
+      "type": "streamableHttp",
+      "url": "https://mcp2.wtsolutions.cn/mcp"
     }
   }
 }
