@@ -23,17 +23,17 @@ JSON 转 Excel MCP 是 WTSolutions 的 JSON 转 Excel 工具包的一部分：
 
 传输方式：SSE
 
-URL: https://mcp.wtsolutions.cn/json-to-excel-mcp-sse
+URL: https://mcp2.wtsolutions.cn/sse
 
 服务器配置 JSON：
 
 ```json
 {
   "mcpServers": {
-    "json_to_excel_mcp_by_WTSolutions": {
+    "json2excel": {
       "args": [
         "mcp-remote",
-        "https://mcp.wtsolutions.cn/json-to-excel-mcp-sse"
+        "https://mcp2.wtsolutions.cn/sse"
       ],
       "command": "npx",
       "tools": [
@@ -49,17 +49,17 @@ URL: https://mcp.wtsolutions.cn/json-to-excel-mcp-sse
 
 传输方式：Streamable HTTP
 
-URL: https://mcp.wtsolutions.cn/json-to-excel-mcp-shttp
+URL: https://mcp2.wtsolutions.cn/mcp
 
 服务器配置 JSON：
 
 ```json
 {
   "mcpServers": {
-    "json_to_excel_by_WTSolutions": {
+    "json2excel": {
       "args": [
         "mcp-remote",
-        "https://mcp.wtsolutions.cn/json-to-excel-mcp-shttp"
+        "https://mcp2.wtsolutions.cn/mcp"
       ],
       "command": "npx",
       "tools": [
