@@ -19,6 +19,28 @@ JSON 转 Excel MCP 是 WTSolutions 的 JSON 转 Excel 工具包的一部分：
 
 可用的 MCP 服务器（SSE 和 Streamable HTTP）：
 
+
+## 使用Stdio (NPX)
+
+
+服务器配置 JSON:
+
+```json
+{
+  "mcpServers": {
+    "json_to_excel": {
+      "args": [
+        "mcp-remote",
+        "https://mcp2.wtsolutions.cn/sse",
+        "--transport",
+        "sse-only"
+      ],
+      "command": "npx"
+    }
+  }
+}
+```
+
 ### 使用 SSE
 
 传输方式：SSE
