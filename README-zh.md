@@ -92,7 +92,7 @@ URL: https://mcp2.wtsolutions.cn/mcp
 | data | string | 是 | 要转换为 CSV 的 JSON 数据字符串。必须是有效的 JSON 数组或对象。 |
 
 > 注意：
-> - 输入数据必须是有效的 JSON 字符串。验证器可在 [JSON 转 Excel Web 应用](https://s.wtsolutions.cn/json-to-excel.html) 使用。
+> - 输入数据必须是有效的 JSON 字符串。JSON格式要求可在 [JSON格式要求](https://json-to-excel.wtsolutions.cn/zh-cn/latest/profeatures.html#id4) 获取，验证器可在 [JSON 转 Excel Web 应用](https://s.wtsolutions.cn/json-to-excel.html) 使用。
 > - 如果 JSON 是对象数组，每个对象将被视为 CSV 中的一行。
 > - 如果 JSON 是单个对象，它将被转换为包含键值对的 CSV。
 > - CSV 将包含基于 JSON 对象中键的标题。
@@ -135,7 +135,7 @@ URL: https://mcp2.wtsolutions.cn/mcp
 > 注意：
 > - URL 应该是可公开访问的。
 > - JSON 文件应该是 .json 格式。
-> - JSON 文件应该包含有效的 JSON 数组或对象。验证器可在 [JSON 转 Excel Web 应用](https://s.wtsolutions.cn/json-to-excel.html) 获取。
+> - JSON 文件应该包含有效的 JSON 数组或对象。JSON格式要求可在 [JSON格式要求](https://json-to-excel.wtsolutions.cn/zh-cn/latest/profeatures.html#id4) 获取，验证器可在 [JSON 转 Excel Web 应用](https://s.wtsolutions.cn/json-to-excel.html) 获取。
 > - 如果 JSON 是对象数组，每个对象将被视为 CSV 中的一行。
 > - 如果 JSON 是单个对象，它将被转换为包含键值对的 CSV。
 > - 此工具返回可轻松转换/导入到 Excel 的 CSV 格式数据。

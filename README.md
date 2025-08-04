@@ -91,7 +91,7 @@ Converts JSON data string into CSV format string.
 | data      | string | Yes      | JSON data string to be converted to CSV. Must be a valid JSON array or object. |
 
 > Note:
-> - Input data must be a valid JSON string. Validator available at [JSON to Excel Web App](https://s.wtsolutions.cn/json-to-excel.html).
+> - Input data must be a valid JSON string. JSON schema available at [JSON Schema](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html#acceptable-json-format) and validator available at [JSON to Excel Web App](https://s.wtsolutions.cn/json-to-excel.html).
 > - If the JSON is an array of objects, each object will be treated as a row in the CSV.
 > - If the JSON is a single object, it will be converted into a CSV with key-value pairs.
 > - The CSV will include headers based on the keys in the JSON objects.
@@ -134,7 +134,7 @@ Converts JSON data from a provided URL into Excel data.
 > Note:
 > - The url should be publicly accessible.
 > - The JSON file should be in .json format.
-> - The JSON file should contain a valid JSON array or object. Validator available at [JSON to Excel Web App](https://s.wtsolutions.cn/json-to-excel.html).
+> - The JSON file should contain a valid JSON array or object. JSON schema available at [JSON Schema](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html#acceptable-json-format) and validator available at [JSON to Excel Web App](https://s.wtsolutions.cn/json-to-excel.html).
 > - If the JSON is an array of objects, each object will be treated as a row in the CSV.
 > - If the JSON is a single object, it will be converted into a CSV with key-value pairs.
 > - This tool returns CSV-formatted data that can be easily converted/imported to Excel.
