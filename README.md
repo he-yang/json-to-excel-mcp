@@ -12,6 +12,7 @@ The **JSON to Excel MCP** (Model Context Protocol) provides a standardized inter
 JSON to Excel MCP is part of JSON to Excel toolkit by WTSolutions:
 * [JSON to Excel Web App: Convert JSON to Excel directly in Web Browser.](https://json-to-excel.wtsolutions.cn/en/latest/WebApp.html)
 * [JSON to Excel Excel Add-in: Convert JSON to Excel in Excel, works with Excel environment seamlessly.](https://json-to-excel.wtsolutions.cn/en/latest/ExcelAddIn.html)
+* [JSON to Excel WPS Add-in: Convert JSON to Excel in WPS, works with WPS environment seamlessly.](https://json-to-excel.wtsolutions.cn/en/latest/WPSAddIn.html)
 * [JSON to Excel API: Convert JSON to Excel by HTTPS POST request.](https://json-to-excel.wtsolutions.cn/en/latest/API.html)
 * <mark>JSON to Excel MCP Service: Convert JSON to Excel by AI Model MCP SSE/StreamableHTTP request.</mark> (<-- You are here.)
 
@@ -24,15 +25,16 @@ Available MCP Servers (SSE and Streamable HTTP):
 
 Server Config JSON:
 
+Case 1 : Free Version
+
+If you are using the free version:
+
 ```json
 {
   "mcpServers": {
-    "json_to_excel": {
+    "json-to-excel-mcp": {
       "args": [
-        "mcp-remote",
-        "https://mcp2.wtsolutions.cn/sse",
-        "--transport",
-        "sse-only"
+        "json-to-excel-mcp"        
       ],
       "command": "npx"
     }
@@ -40,43 +42,31 @@ Server Config JSON:
 }
 ```
 
+Case 2 : Pro Version
+
+If you are using the pro version (with a valid proCode):
+
+```json
+{
+  "mcpServers": {
+    "json-to-excel-mcp": {
+      "args": [
+        "json-to-excel-mcp"        
+      ],
+      "command": "npx",
+      "env": {
+        "proCode": "type in your proCode here"
+      }
+    }
+  }
+}
+```
+
 ### Using SSE
+Not supported starting from v0.3.0
 
-Transport: SSE
-
-URL: https://mcp2.wtsolutions.cn/sse
-
-Server Config JSON:
-
-```json
-{
-  "mcpServers": {
-    "json2excelsse": {
-      "type": "sse",
-      "url": "https://mcp2.wtsolutions.cn/sse"
-    }
-  }
-}
-
-```
 ### Using Streamable HTTP
-
-Transport: Streamable HTTP
-
-URL: https://mcp2.wtsolutions.cn/mcp
-
-Server Config JSON:
-
-```json
-{
-  "mcpServers": {
-    "json2excelmcp": {
-      "type": "streamableHttp",
-      "url": "https://mcp2.wtsolutions.cn/mcp"
-    }
-  }
-}
-```
+Not supported starting from v0.3.0
 
 ## MCP Tools
 
@@ -89,6 +79,7 @@ Converts JSON data string into CSV format string.
 | Parameter | Type   | Required | Description                                                                 |
 |-----------|--------|----------|-----------------------------------------------------------------------------|
 | data      | string | Yes      | JSON data string to be converted to CSV. Must be a valid JSON array or object. |
+| options   | object | No       | Optional configuration object for customizing the conversion process. Requires a valid subscription to JSON to Excel service. |
 
 > Note:
 > - Input data must be a valid JSON string. JSON schema available at [JSON Schema](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html#acceptable-json-format) and validator available at [JSON to Excel Web App](https://s.wtsolutions.cn/json-to-excel.html).
@@ -96,6 +87,21 @@ Converts JSON data string into CSV format string.
 > - If the JSON is a single object, it will be converted into a CSV with key-value pairs.
 > - The CSV will include headers based on the keys in the JSON objects.
 > - This tool returns CSV-formatted data that can be easily converted/imported to Excel.
+
+#### Options Object
+
+The options object can contain the following properties:
+
+| Property | Type  |Default | Description                                                                 |
+|----------|-------|--------|-----------------------------------------------------------------------------|
+| proCode  | string| ""     | Pro Code for custom conversion rules which requires a valid subscription to JSON to Excel service. This is a mandatory input if options is provided.| 
+| jsonMode | string | "flat"| Format mode for JSON output: "nested", or "flat"| 
+| delimiter| string | "." | Delimiter character for nested JSON keys when using jsonMode: "nested", acceptable delimiters are ".", "_", "__", "/".| 
+| maxDepth|string| "unlimited"| Maximum depth for nested JSON objects when using jsonMode: "nested". For maxDepth, "unlimited", "1" ~ "20" acceptable.| 
+
+Note:
+> - proCode is mandatory if options is provided. If you do not have a valid [Pro Code](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html), please use the free version without the options parameter, default conversion rules will be applied.
+> - Detailed conversion rules can be found in [Pro Features](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html).
 
 #### Example Prompt 1:
 
@@ -130,6 +136,7 @@ Converts JSON data from a provided URL into Excel data.
 | Parameter | Type   | Required | Description                                      |
 |-----------|--------|----------|--------------------------------------------------|
 | url       | string | Yes      | URL pointing to a JSON file (.json)              |
+| options   | object | No       | Optional configuration object for customizing the conversion process. Requires a valid subscription to JSON to Excel service. |
 
 > Note:
 > - The url should be publicly accessible.
@@ -138,6 +145,21 @@ Converts JSON data from a provided URL into Excel data.
 > - If the JSON is an array of objects, each object will be treated as a row in the CSV.
 > - If the JSON is a single object, it will be converted into a CSV with key-value pairs.
 > - This tool returns CSV-formatted data that can be easily converted/imported to Excel.
+
+#### Options Object
+
+The options object can contain the following properties:
+
+| Property | Type  |Default | Description                                                                 |
+|----------|-------|--------|-----------------------------------------------------------------------------|
+| proCode  | string| ""     | Pro Code for custom conversion rules which requires a valid subscription to JSON to Excel service. This is a mandatory input if options is provided.| 
+| jsonMode | string | "flat"| Format mode for JSON output: "nested", or "flat"| 
+| delimiter| string | "." | Delimiter character for nested JSON keys when using jsonMode: "nested", acceptable delimiters are ".", "_", "__", "/".| 
+| maxDepth|string| "unlimited"| Maximum depth for nested JSON objects when using jsonMode: "nested". For maxDepth, "unlimited", "1" ~ "20" acceptable.| 
+
+Note:
+> - proCode is mandatory if options is provided. If you do not have a valid [Pro Code](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html), please use the free version without the options parameter, default conversion rules will be applied.
+> - Detailed conversion rules can be found in [Pro Features](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html).
 
 ### Example Prompt 1
 
@@ -231,8 +253,7 @@ By using JSON to Excel MCP, you agree to the [service agreement](TERMS.md), and 
 
 ## Pricing
 
-Free for now.
+Using default conversion rules, free.
 
-## Donation
+Using custom conversion rules, requires a Pro Code. Please refer to the [pricing page](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html) for more details.
 
-[https://buymeacoffee.com/wtsolutions](https://buymeacoffee.com/wtsolutions)
