@@ -25,7 +25,7 @@ Available MCP Servers (SSE and Streamable HTTP):
 
 Server Config JSON:
 
-Case 1 : Free Version
+Case 1 : Free Version (Up to processing 6 Rows of data)
 
 If you are using the free version:
 
@@ -79,7 +79,7 @@ Converts JSON data string into CSV format string.
 | Parameter | Type   | Required | Description                                                                 |
 |-----------|--------|----------|-----------------------------------------------------------------------------|
 | data      | string | Yes      | JSON data string to be converted to CSV. Must be a valid JSON array or object. |
-| options   | object | No       | Optional configuration object for customizing the conversion process. Requires a valid subscription to JSON to Excel service. |
+| options   | object | No       | Optional configuration object for customizing the conversion process. |
 
 > Note:
 > - Input data must be a valid JSON string. JSON schema available at [JSON Schema](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html#acceptable-json-format) and validator available at [JSON to Excel Web App](https://s.wtsolutions.cn/json-to-excel.html).
@@ -94,14 +94,14 @@ The options object can contain the following properties:
 
 | Property | Type  |Default | Description                                                                 |
 |----------|-------|--------|-----------------------------------------------------------------------------|
-| proCode  | string| ""     | Pro Code for custom conversion rules which requires a valid subscription to JSON to Excel service. This is a mandatory input if options is provided.| 
+| proCode  | string| ""     | Pro Code JSON to Excel service. | 
 | jsonMode | string | "flat"| Format mode for JSON output: "nested", or "flat"| 
 | delimiter| string | "." | Delimiter character for nested JSON keys when using jsonMode: "nested", acceptable delimiters are ".", "_", "__", "/".| 
 | maxDepth|string| "unlimited"| Maximum depth for nested JSON objects when using jsonMode: "nested". For maxDepth, "unlimited", "1" ~ "20" acceptable.| 
 
 Note:
-> - proCode is mandatory if options is provided. If you do not have a valid [Pro Code](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html), please use the free version without the options parameter, default conversion rules will be applied.
-> - Detailed conversion rules can be found in [Pro Features](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html).
+> - If you do not have a valid [Pro Code](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html), max 6 rows will be processed.
+> - Detailed conversion rules can be found in [Features](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html).
 
 #### Example Prompt 1:
 
@@ -136,7 +136,7 @@ Converts JSON data from a provided URL into Excel data.
 | Parameter | Type   | Required | Description                                      |
 |-----------|--------|----------|--------------------------------------------------|
 | url       | string | Yes      | URL pointing to a JSON file (.json)              |
-| options   | object | No       | Optional configuration object for customizing the conversion process. Requires a valid subscription to JSON to Excel service. |
+| options   | object | No       | Optional configuration object for customizing the conversion process. |
 
 > Note:
 > - The url should be publicly accessible.
@@ -152,13 +152,13 @@ The options object can contain the following properties:
 
 | Property | Type  |Default | Description                                                                 |
 |----------|-------|--------|-----------------------------------------------------------------------------|
-| proCode  | string| ""     | Pro Code for custom conversion rules which requires a valid subscription to JSON to Excel service. This is a mandatory input if options is provided.| 
+| proCode  | string| ""     | Pro Code for JSON to Excel service.| 
 | jsonMode | string | "flat"| Format mode for JSON output: "nested", or "flat"| 
 | delimiter| string | "." | Delimiter character for nested JSON keys when using jsonMode: "nested", acceptable delimiters are ".", "_", "__", "/".| 
 | maxDepth|string| "unlimited"| Maximum depth for nested JSON objects when using jsonMode: "nested". For maxDepth, "unlimited", "1" ~ "20" acceptable.| 
 
 Note:
-> - proCode is mandatory if options is provided. If you do not have a valid [Pro Code](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html), please use the free version without the options parameter, default conversion rules will be applied.
+> - If you do not have a valid [Pro Code](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html), max 6 rows will be processed.
 > - Detailed conversion rules can be found in [Pro Features](https://json-to-excel.wtsolutions.cn/en/latest/profeatures.html).
 
 ### Example Prompt 1
@@ -169,7 +169,6 @@ Convert JSON file to Excel, file URL: https://mcp.wtsolutions.cn/example.json
 (applicable only when you do not have a URL and working with online AI LLM)
 
 I've just uploaded one .json file to you, please extract its URL and send it to MCP tool 'json_to_excel_mcp_from_url', for JSON to Excel conversion.
-
 
 ## Response Format
 
@@ -245,6 +244,8 @@ The MCP returns descriptive error messages for common issues:
 - `Network Error when fetching file`: When there's an error downloading the file from the provided URL
 - `File not found`: When the file at the provided URL cannot be found
 - `Server Internal Error`: When an unexpected error occurs
+- `Pro Code Invalid`: When the provided Pro Code is invalid or not subscribed
+- `Max 6 rows processed`: When no valid Pro Code is provided, only the first 6 rows of data will be processed
 
 ## Service Agreement and Privacy Policy
 
@@ -253,7 +254,8 @@ By using JSON to Excel MCP, you agree to the [service agreement](TERMS.md), and 
 
 ## Pricing
 
-Using default conversion rules, free.
+Free version, max 6 rows processed.
+Pro version, unlimited data processing.
 
-Using custom conversion rules, requires a Pro Code. Please refer to the [pricing page](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html) for more details.
+Please refer to the [pricing page](https://json-to-excel.wtsolutions.cn/en/latest/pricing.html) for more details.
 

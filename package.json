@@ -1,8 +1,8 @@
 {
   "name": "json-to-excel-mcp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "JSON to Excel by WTSolutions MCP",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "tsc && cp src/functions.js build/ && chmod 755 build/index.js",
     "try": "node build/index.js",

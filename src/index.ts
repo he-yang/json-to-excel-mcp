@@ -7,22 +7,22 @@ import { processDataJ2E, processURLJ2E, URLs  } from './functions.js'
 
 const server = new McpServer({
 	name: "JSON to Excel MCP by WTSolutions",
-	version: "0.3.0",
+	version: "0.4.0",
 });
 
 server.registerTool(
 	"json_to_excel_mcp_from_url",
 	{
 		title: "JSON to Excel MCP by WTSolutions - from url",
-		description: "Convert JSON data from publicly accessible URL(.json format) to CSV data. If you do not have a Pro Code, please pass only the url parameter, and do not pass the options parameter.",
+		description: "Convert JSON data from publicly accessible URL(.json format) to CSV data.",
 		inputSchema: {
 			url: z.string().nonempty().describe("Publicly accessible URL of the JSON file"),
 			options: z.object({
 				jsonMode: z.enum(['nested', 'flat']).optional().describe("Format mode for JSON output: “nested”, or “flat”"),
 				delimiter: z.enum(['.', '_', '__', '/']).optional().describe("Delimiter character for nested JSON keys when using jsonMode: “nested”, acceptable delimiters are “.”, “_”, “__”, “/”."),
 				maxDepth: z.enum(['unlimited', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']).optional().describe("Maximum depth for nested JSON objects when using jsonMode: “nested”. For maxDepth, “unlimited”, “1” ~ “20” acceptable."),
-				proCode: z.string().optional().describe("Pro Code for JSON to Excel MCP by WTSolutions. If you do not have a Pro Code, please do not pass this parameter."),
-			}).optional().describe("If you do not have a Pro Code, please do not pass the options parameter in the request."),
+				proCode: z.string().optional().describe("Pro Code for JSON to Excel MCP by WTSolutions. "),
+			}).optional(),
 		}
 	},
 	async ({ url, options }) => {
@@ -33,8 +33,6 @@ server.registerTool(
 		if (result.isError) {
 			result['data'] = ''
 			result['msg'] = result['msg'] + ' ||| Refer to Documentation at  ' + URLs.mcpJ2E
-		} else {
-			result['msg'] = 'success'
 		}
 		return { content: [{ type: "text", text: JSON.stringify(result) }] };
 	}
@@ -44,15 +42,15 @@ server.registerTool(
 	"json_to_excel_mcp_from_data",
 	{
 		title: "JSON to Excel MCP by WTSolutions - from data",
-		description: "Convert JSON data to CSV data. If you do not have a Pro Code, please pass only the data parameter, and do not pass the options parameter.",
+		description: "Convert JSON data to CSV data. ",
 		inputSchema: {
 			data: z.string().nonempty().describe("JSON data to be converted to CSV"),
 			options: z.object({
 				jsonMode: z.enum(['nested', 'flat']).optional().describe("Format mode for JSON output: “nested”, or “flat”"),
 				delimiter: z.enum(['.', '_', '__', '/']).optional().describe("Delimiter character for nested JSON keys when using jsonMode: “nested”, acceptable delimiters are “.”, “_”, “__”, “/”."),
 				maxDepth: z.enum(['unlimited', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20']).optional().describe("Maximum depth for nested JSON objects when using jsonMode: “nested”. For maxDepth, “unlimited”, “1” ~ “20” acceptable."),
-				proCode: z.string().optional().describe("Pro Code for JSON to Excel MCP by WTSolutions. If you do not have a Pro Code, please do not pass this parameter."),
-			}).optional().describe("If you do not have a Pro Code, please do not pass the options parameter in the request."),
+				proCode: z.string().optional().describe("Pro Code for JSON to Excel MCP by WTSolutions."),
+			}).optional(),
 		}
 	},
 
@@ -64,8 +62,6 @@ server.registerTool(
 		if (result.isError) {
 			result['data'] = ''
 			result['msg'] = result['msg'] + ' ||| Refer to Documentation at  ' + URLs.mcpJ2E
-		} else {
-			result['msg'] = 'success'
 		}
 		return { content: [{ type: "text", text: JSON.stringify(result) }] };
 	}

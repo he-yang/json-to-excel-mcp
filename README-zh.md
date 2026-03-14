@@ -26,7 +26,7 @@ JSON 转 Excel MCP 是 WTSolutions 的 JSON 转 Excel 工具包的一部分：
 
 服务器配置 JSON:
 
-Case 1 : 免费版
+Case 1 : 免费版(最多转换6行数据)
 
 如果您使用的是免费版本：
 
@@ -96,14 +96,14 @@ options 对象可以包含以下属性：
 
 | 属性 | 类型 | 默认值 | 描述 |
 |----------|-------|--------|-------------|
-| proCode | string | "" | 自定义转换规则的 Pro 代码，需要有效的 JSON 转 Excel 服务订阅。如果提供了 options，则此为必填项。 |
+| proCode | string | "" | 自定义转换规则的 Pro 代码。 |
 | jsonMode | string | "flat" | JSON 输出的格式模式："nested"（嵌套）或 "flat"（扁平） |
 | delimiter | string | "." | 使用 jsonMode: "nested" 时嵌套 JSON 键的分隔符，可接受的分隔符为 "."、"_"、"__"、"/"。 |
 | maxDepth | string | "unlimited" | 使用 jsonMode: "nested" 时嵌套 JSON 对象的最大深度。maxDepth 可接受的值为 "unlimited"、"1" ~ "20"。 |
 
 注意：
-> - 如果提供了 options，则 proCode 是必填项。如果您没有有效的 [Pro 代码](https://json-to-excel.wtsolutions.cn/zh-cn/latest/pricing.html)，请使用不带 options 参数的免费版本，默认转换规则将被应用。
-> - 详细的转换规则可在 [Pro 功能](https://json-to-excel.wtsolutions.cn/zh-cn/latest/profeatures.html) 中找到。
+> - 如果您没有有效的 [Pro 代码](https://json-to-excel.wtsolutions.cn/zh-cn/latest/pricing.html)，最多只能处理6行数据。
+> - 详细的转换规则可在 [功能](https://json-to-excel.wtsolutions.cn/zh-cn/latest/profeatures.html) 中找到。
 
 #### 示例提示 1：
 
@@ -138,7 +138,7 @@ options 对象可以包含以下属性：
 | 参数 | 类型 | 是否必需 | 描述 |
 |---------|--------|----------|-------------|
 | url | string | 是 | 指向 JSON 文件（.json）的 URL |
-| options | object | 否 | 用于自定义转换过程的可选配置对象。需要有效的 JSON 转 Excel 服务订阅。 |
+| options | object | 否 | 用于自定义转换过程的可选配置对象。 |
 
 > 注意：
 > - URL 应该是可公开访问的。
@@ -154,14 +154,14 @@ options 对象可以包含以下属性：
 
 | 属性 | 类型 | 默认值 | 描述 |
 |----------|-------|--------|-------------|
-| proCode | string | "" | 自定义转换规则的 Pro 代码，需要有效的 JSON 转 Excel 服务订阅。如果提供了 options，则此为必填项。 |
+| proCode | string | "" | JSON 转 Excel 服务订阅的Pro Code |
 | jsonMode | string | "flat" | JSON 输出的格式模式："nested"（嵌套）或 "flat"（扁平） |
 | delimiter | string | "." | 使用 jsonMode: "nested" 时嵌套 JSON 键的分隔符，可接受的分隔符为 "."、"_"、"__"、"/"。 |
 | maxDepth | string | "unlimited" | 使用 jsonMode: "nested" 时嵌套 JSON 对象的最大深度。maxDepth 可接受的值为 "unlimited"、"1" ~ "20"。 |
 
 注意：
-> - 如果提供了 options，则 proCode 是必填项。如果您没有有效的 [Pro 代码](https://json-to-excel.wtsolutions.cn/zh-cn/latest/pricing.html)，请使用不带 options 参数的免费版本，默认转换规则将被应用。
-> - 详细的转换规则可在 [Pro 功能](https://json-to-excel.wtsolutions.cn/zh-cn/latest/profeatures.html) 中找到。
+> - 如果您没有有效的 [Pro 代码](https://json-to-excel.wtsolutions.cn/zh-cn/latest/pricing.html)，最多只能处理6行数据。
+> - 详细的转换规则可在 [功能](https://json-to-excel.wtsolutions.cn/zh-cn/latest/profeatures.html) 中找到。
 
 ### 示例提示 1
 
@@ -247,6 +247,8 @@ MCP 为常见问题返回描述性错误消息：
 - `Network Error when fetching file`：当从提供的 URL 下载文件时出错时
 - `File not found`：当找不到提供的 URL 上的文件时
 - `Server Internal Error`：当发生意外错误时
+- `Pro Code Invalid`：当提供的 Pro Code 无效或未订阅时
+- `Max 6 rows processed`：当未提供有效 Pro Code 时，仅处理前 6 行数据
 
 ## 服务协议和隐私政策
 
@@ -254,6 +256,9 @@ MCP 为常见问题返回描述性错误消息：
 
 
 ## 定价
-使用默认的转换规则，免费。
-使用自定义的转换规则，需要购买Pro Code，参考[定价](https://json-to-excel.wtsolutions.cn/zh-cn/latest/pricing.html)。
+
+免费版，最大处理6行数据。
+专业版，无限制数据处理。
+
+参考[定价](https://json-to-excel.wtsolutions.cn/zh-cn/latest/pricing.html)。
 

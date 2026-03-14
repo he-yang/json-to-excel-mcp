@@ -1,6 +1,6 @@
 # Service Agreement
 
-**Effective Date:** 2025-12-26
+**Effective Date:** 2026-03-14
 
 ## 1. Introduction
 
@@ -19,7 +19,7 @@ To use the Service, you must:
 
 ## 4. License and Restrictions
 
-We grant you a limited, non-exclusive, non-transferable, revocable license to use the Service. For basic functionality, this license is free of charge. For Pro features that require a paid subscription, a valid Pro Code is required. You agree not to:
+We grant you a limited, non-exclusive, non-transferable, revocable license to use the Service. For basic functionality, this license is free of charge. For Pro Version that require a paid subscription, a valid Pro Code is required. You agree not to:
 - Reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code of the Service.
 - Distribute, sublicense, lease, rent, or otherwise transfer the Service to any third party.
 - Share or transfer your Pro Code or subscription to another user.
@@ -28,14 +28,14 @@ We grant you a limited, non-exclusive, non-transferable, revocable license to us
 
 ## 5. Subscription Terms
 
-The Pro features of the Service are available through a  subscription. Key terms include:
+The Pro Version of the Service are available through a  subscription. Key terms include:
 - A 7-day free trial period is offered for new subscribers
 - You may cancel your subscription at any time during the trial period without charge
 - After the trial period, your subscription will automatically renew each month
 - You may cancel your subscription at any time, which will take effect at the end of your current billing cycle
 - We reserve the right to modify subscription fees with 30 days' notice
 - All payments are non-refundable except as required by law
-- A valid Pro Code is required to access Pro features
+- A valid Pro Code is required to access Pro Version
 
 ## 6. User Responsibilities
 
