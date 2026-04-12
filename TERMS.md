@@ -1,6 +1,6 @@
 # Service Agreement
 
-**Effective Date:** 2026-03-14
+**Effective Date:** 2026-04-12
 
 ## 1. Introduction
 
@@ -19,11 +19,12 @@ To use the Service, you must:
 
 ## 4. License and Restrictions
 
-We grant you a limited, non-exclusive, non-transferable, revocable license to use the Service. For basic functionality, this license is free of charge. For Pro Version that require a paid subscription, a valid Pro Code is required. You agree not to:
+We grant you a limited, non-exclusive, non-transferable, revocable license to use the Service solely for your personal, non-commercial purposes. Commercial use of the Service is strictly prohibited. For basic functionality, this license is free of charge. For Pro Version that require a paid subscription, a valid Pro Code is required. You agree not to:
 - Reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code of the Service.
 - Distribute, sublicense, lease, rent, or otherwise transfer the Service to any third party.
 - Share or transfer your Pro Code or subscription to another user.
-- Use the Service for commercial purposes, any illegal or unauthorized purpose.
+- Use the Service for any illegal or unauthorized purpose.
+- Use the Service for any commercial purposes.
 
 
 ## 5. Subscription Terms
@@ -54,7 +55,7 @@ The Service is provided "as is" and "as available" without any warranties of any
 
 ## 9. Limitation of Liability
 
-In no event shall **WTSolutions** be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, arising out of or in connection with your use of the Service, whether in an action in contract, tort, or otherwise, even if we have been advised of the possibility of such damages.
+In no event shall **WTSolutions** be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, arising out of or in connection with your use of the Service, whether in an action in contract, tort, or otherwise, even if we have been advised of the possibility of such damages. To the maximum extent permitted by applicable law, our total liability to you for any claims arising from or related to this Agreement or the Service shall not exceed the total amount you have paid to us for the Service during the 12 months preceding the claim.
 
 ## 10. Termination
 
