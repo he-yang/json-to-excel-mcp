@@ -7,7 +7,7 @@ import { processDataJ2E, processURLJ2E, URLs  } from './functions.js'
 
 const server = new McpServer({
 	name: "JSON to Excel MCP by WTSolutions",
-	version: "0.4.0",
+	version: "0.4.1",
 });
 
 server.registerTool(
